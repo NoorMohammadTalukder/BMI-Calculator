@@ -1,47 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BMI Calculator</title>
-</head>
+    <link rel="icon" type="image/x-icon" href="./resources/bg_image.jpg">
+    <link rel="stylesheet" href="style.css" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-    <p>Result:</p>
-    <p>BMI: <span id="output"></span></p>
-    <form id="myForm">
+  <body class="body">
+    <video autoplay muted loop>
+      <source src="./resources/bg_video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="parent">
+      <h2 id="output"></h2>
+      <h5 id="error"></h5>
+      <form id="myForm">
         <div>
-            <input type="text" id="weightInput">
-
+          Enter Your Weight (in Kg)
+          <input type="text" id="weightInput" />
         </div>
         <div>
-            <input type="text" id="heightInput">
-
+          <p>Enter Your Height (in Meter)</p>
+          <input type="text" id="heightInput" />
         </div>
         <div>
-            <button type="submit" id="calculateBtn">Calculate</button>
+          <button type="submit" id="calculateBtn">Calculate Your BMI</button>
         </div>
-    </form>
-</body>
-
-<script>
-    const form = document.querySelector('#myForm');
-    form.addEventListener('submit', (event) => {
-        event.preventDefault(); // prevent the form from submitting
-
-        const weightInput = document.querySelector('#weightInput');
-        const heightInput = document.querySelector('#heightInput');
-        const output = document.querySelector('#output');
-
-        // get the values of form fields
-        const weight =parseFloat(weightInput.value) ;
-        const height =parseFloat(heightInput.value) ;
-        let BMI = weight  / (height * height );
-        output.innerHTML=BMI
-        alert(BMI)
-    });
-</script>
-
+      </form>
+    </div>
+  </body>
+  <script src="BMI.js"></script>
 </html>
